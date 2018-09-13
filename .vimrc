@@ -18,6 +18,7 @@ Plugin 'jnurmine/Zenburn'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'shime/vim-livedown'
 
 " add all your plugins here (note older versions of Vundle
 " used Bundle instead of Plugin)
@@ -64,3 +65,10 @@ set nu
 
 " NerdTree mapping key
 map <F3> :NERDTreeToggle<cr>
+
+" vim-livedown
+map <F5> :LivedownToggle <cr>
+" should markdown preview get shown automatically upon opening markdown buffer
+let g:livedown_autorun = 0
+let g:livedown_port = 9595
+let g:livedown_open = 1
