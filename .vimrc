@@ -16,6 +16,7 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'nvie/vim-flake8'
 Plugin 'jnurmine/Zenburn'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'dracula/vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'shime/vim-livedown'
@@ -58,7 +59,9 @@ syntax on
 let python_highlight_all = 1
 
 " Color Schemes
-colorscheme zenburn
+" syntax enable
+set background=dark
+colorscheme solarized 
 
 " Line Numbering
 set nu
@@ -72,3 +75,8 @@ map <F5> :LivedownToggle <cr>
 let g:livedown_autorun = 0
 let g:livedown_port = 9595
 let g:livedown_open = 1
+
+let g:ycm_key_list_select_completion = ['<TAB>']
+let g:ycm_key_list_previous_completion = ['<S-TAB>']
+let g:ycm_key_list_stop_completion = ['<C-y>', '<CR>']
+
