@@ -218,9 +218,5 @@ ${PROMPT_SYMBOL} "
 PROMPT_COMMAND=set_bash_prompt
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-<<<<<<< HEAD
-=======
-
 alias history='history | fzf > selected'
-export FZF_COMPLETION_TRIGGER=''
->>>>>>> ec7d9ef08be458e9ade8bfd00d06580d6c4a9b2d
+export FZF_COMPLETION_TRIGGER='**'
