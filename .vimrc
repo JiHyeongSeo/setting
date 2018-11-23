@@ -77,3 +77,6 @@ command! -bang -nargs=+ -complete=dir Ag call fzf#vim#ag_raw(<q-args>, <bang>0)
 " ackag
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
+" map vim tab key
+map <c-t> :tabnew<CR>
+map <c-w> :tabclose<CR>
