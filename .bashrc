@@ -216,3 +216,7 @@ ${PROMPT_SYMBOL} "
 
 # Tell bash to execute this function just before displaying its prompt.
 PROMPT_COMMAND=set_bash_prompt
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+alias history='history | fzf > selected'
