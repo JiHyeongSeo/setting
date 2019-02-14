@@ -50,8 +50,6 @@ let python_highlight_all = 1
 
 " Color Schemes
 " syntax enable
-set background=dark
-colorscheme solarized 
 
 " Line Numbering
 set nu
@@ -80,3 +78,8 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 " map vim tab key
 map <c-t> :tabnew<CR>
 map <c-w> :tabclose<CR>
+
+let g:flake8_cmd="/usr/bin/flake8"
+let g:flake8_quickfix_height=7
+let g:flake8_show_in_file=1   " show
+let g:flake8_max_markers=500  " maximum # of markers to show(500 is default)
