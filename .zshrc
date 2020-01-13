@@ -1,23 +1,5 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/apple/.oh-my-zsh"
-source ~/.zplug/init.zsh
-zplug 'wfxr/forgit'
-# Can manage local plugins
-zplug "~/.zsh", from:local
-
-# Load theme file
-zplug 'dracula/zsh', as:theme
-
-# Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
-
-# Then, source plugins and add commands to $PATH
-zplug load --verbose
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -114,7 +96,6 @@ source $ZSH/oh-my-zsh.sh
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 autoload -U colors && colors
-PS1="%{$fg[cyan]%}%n%{$reset_color%} %{$fg[yellow]%}%~ %{$reset_color%}%% "
 
 export HISTSIZE=10000
 export HISTFILESIZE=10000
@@ -207,4 +188,22 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 export PATH="/Users/apple/develop/dist_mac/:$PATH"
 eval "$(pyenv init -)"
 
+source ~/.zplug/init.zsh
 
+# Can manage local plugins
+zplug "~/.zsh", from:local
+
+# Load theme file
+zplug 'dracula/zsh', as:theme
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+# Then, source plugins and add commands to $PATH
+zplug load --verbose
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
