@@ -75,7 +75,6 @@ set foldlevel=99
 " YCM
 let g:ycm_autoclose_preview_window_after_completion=1
 map <space>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
 
 " powerline
 set guifont=Inconsolata\ for\ Powerline:h15
