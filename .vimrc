@@ -5,18 +5,20 @@ filetype off                  " required
 call plug#begin('~/.vim/plugged')
 Plug 'gmarik/Vundle.vim'
 Plug 'vim-scripts/indentpython.vim'
-Plug 'Valloric/YouCompleteMe'
-Plug 'vim-syntastic/syntastic'
-Plug 'nvie/vim-flake8'
 Plug 'jnurmine/Zenburn'
-Plug 'altercation/vim-colors-solarized'
-Plug 'dracula/vim'
 Plug 'scrooloose/nerdtree'
-Plug 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-Plug 'shime/vim-livedown'
 Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
+Plug 'tmhedberg/SimpylFold'
+Plug 'Valloric/YouCompleteMe'
+Plug 'davidhalter/jedi-vim'
+Plug 'vim-syntastic/syntastic'
+Plug 'nvie/vim-flake8'
+Plug 'altercation/vim-colors-solarized'
+Plug 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plug 'tpope/vim-fugitive'
+Plug 'kien/ctrlp.vim'
 call plug#end()
 filetype plugin indent on    " required
 
@@ -49,6 +51,7 @@ syntax on
 let python_highlight_all = 1
 
 " Color Schemes
+colorscheme zenburn
 " syntax enable
 
 " Line Numbering
@@ -57,17 +60,6 @@ set nu
 " NerdTree mapping key
 map <F3> :NERDTreeToggle<cr>
 
-" vim-livedown
-map <F5> :LivedownToggle <cr>
-" should markdown preview get shown automatically upon opening markdown buffer
-let g:livedown_autorun = 0
-let g:livedown_port = 9595
-let g:livedown_open = 1
-
-let g:ycm_key_list_select_completion = ['<TAB>']
-let g:ycm_key_list_previous_completion = ['<S-TAB>']
-let g:ycm_key_list_stop_completion = ['<C-y>', '<CR>']
-
 " FZF
 set rtp+=~/.fzf
 command! -bang -nargs=+ -complete=dir Ag call fzf#vim#ag_raw(<q-args>, <bang>0)
@@ -75,11 +67,21 @@ command! -bang -nargs=+ -complete=dir Ag call fzf#vim#ag_raw(<q-args>, <bang>0)
 " ackag
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
-" map vim tab key
-map <c-t> :tabnew<CR>
-map <c-w> :tabclose<CR>
+" simplyfold
+let g:SimpylFold_docstring_preview=1
+let g:SimpylFold_fold_docstring=0
+set foldlevel=99
 
-let g:flake8_cmd="/usr/bin/flake8"
-let g:flake8_quickfix_height=7
-let g:flake8_show_in_file=1   " show
-let g:flake8_max_markers=500  " maximum # of markers to show(500 is default)
+" YCM
+let g:ycm_autoclose_preview_window_after_completion=1
+map <space>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" powerline
+set guifont=Inconsolata\ for\ Powerline:h15
+let g:Powerline_symbols = 'fancy'
+set encoding=utf-8
+set t_Co=256
+set fillchars+=stl:\ ,stlnc:\
+set term=xterm-256color
+set termencoding=utf-8
+set laststatus=2
