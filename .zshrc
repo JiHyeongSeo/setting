@@ -103,20 +103,12 @@ export HISTCONTROL=erasedups
 export CLICOLOR=1
 # export LSCOLORS=ExFxBxDxCxegedabagacad
 export LSCOLORS=exfxcxdxbxegedabagacad
-export AIRBRIDGE_RAW_EVENTS_TOPIC="airbridge-raw-events"
-export AIRBRIDGE_NO_UPDATE_MODE=1
-export AIRBRIDGE_EVENT_WORKER_CONSUMER_GROUP_ID='airbridge-event-worker-stage'
-export EVENT_WORKER_APM_SERVICE_NAME='airbridge-event-worker-stage'
-export EVENT_WORKER_USE_APM_LOGGING='1'
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 
 alias python='python3'
 alias vi='vim'
-
-export VAULT_ADDR="https://vault.airbridge.io"
-export VAULT_CACERT="$HOME/vault-ca.pem"
 
 alias weather="curl http://wttr.in/Seoul"
 
@@ -135,8 +127,6 @@ export HISTFILESIZE=10000        # increase history file size (default is 500)
 export HISTSIZE=${HISTFILESIZE}  # increase history size (default is 500)
 # ensure synchronization between bash memory and history file
 export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"
-
-export CLASSPATH="/Users/apple/develop/local_test/apache-druid-0.15.0-incubating/lib/zookeeper-3.4.11.jar"
 
 # HSTR configuration - add this to ~/.zshrc
 alias hh=hstr                    # hh to be alias for hstr
@@ -207,3 +197,5 @@ fi
 # Then, source plugins and add commands to $PATH
 zplug load --verbose
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+
+alias lg='lazygit'
